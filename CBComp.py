@@ -30,10 +30,6 @@ class FeatureExtractor(nn.Module):
         x = x.cpu().detach().numpy()
         x = (x / (np.linalg.norm(x,axis=1))[:, np.newaxis])
         return x
-        
-transform = transforms.Compose([transforms.Resize((224,224)),
-                                transforms.ConvertImageDtype(torch.float),
-                                transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
 def distance(query_fv, dataset_fv):
     dist = []
