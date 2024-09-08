@@ -1,2 +1,5 @@
 .venv
 *.mp4
+Results
+__pycache__
+frames
