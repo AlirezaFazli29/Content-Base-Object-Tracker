@@ -25,10 +25,12 @@ class FeatureExtractor(nn.Module):
         return x
     
     def extract(self, x):
-        x = self.forward(x)
-        x = x.cpu().detach().numpy()
-        x = (x / (np.linalg.norm(x,axis=1))[:, np.newaxis])
+        with torch.no_grad():
+            x = self.forward(x)
+            x = x.cpu().detach().numpy()
+            x = (x / (np.linalg.norm(x,axis=1))[:, np.newaxis])
         return x
+
 
 def distance(query_fv, dataset_fv):
     dist = []

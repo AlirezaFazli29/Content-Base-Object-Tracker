@@ -1,5 +1,5 @@
 import cv2
-import CBComp as cb
+import VGG16_CBComp as cb
 import torch
 from torchvision.transforms import transforms
 import numpy as np
