@@ -3,3 +3,6 @@
 Results
 __pycache__
 frames
+dataset
+splitted_data
+net
